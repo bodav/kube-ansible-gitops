@@ -1,0 +1,40 @@
+# Helm build output
+build/
+*.tgz
+
+# Helm chart dependencies
+charts/*.tgz
+**/charts/*.tgz
+
+# Helm lock files (comment out if you want to commit them)
+# Chart.lock
+
+# Local values overrides
+values.local.yaml
+**/values.local.yaml
+values-*.local.yaml
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+
+# OS files
+Thumbs.db
+.directory
+
+# Secrets (never commit!)
+secrets.yaml
+**/secrets.yaml
+*.secret.yaml
+
+# Test output
+test-output/
