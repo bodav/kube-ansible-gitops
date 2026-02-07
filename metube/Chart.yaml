@@ -1,0 +1,6 @@
+apiVersion: v2
+name: metube
+description: A Helm chart for MeTube - Web GUI for youtube-dl
+type: application
+version: 0.1.0
+appVersion: "latest"

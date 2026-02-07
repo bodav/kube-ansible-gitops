@@ -1,0 +1,36 @@
+replicaCount: 1
+
+image:
+  repository: jellyfin/jellyfin
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8096
+
+ingress:
+  enabled: true
+  className: "traefik"
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+  host: jellyfin.kube.home
+  paths:
+    - path: /
+      pathType: Prefix
+
+persistence:
+  config:
+    enabled: true
+    storageClass: "local-path"
+    accessMode: ReadWriteOnce
+    size: 5Gi
+
+  media:
+    enabled: true
+    storageClass: "local-path"
+    accessMode: ReadWriteMany
+    size: 50Gi
+
+env:
+  - name: JELLYFIN_PublishedServerUrl
+    value: "http://jellyfin.kube.home"

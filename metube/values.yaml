@@ -1,0 +1,31 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/alexta69/metube
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8081
+
+ingress:
+  enabled: true
+  className: "traefik"
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+  host: metube.kube.home
+  paths:
+    - path: /
+      pathType: Prefix
+
+persistence:
+  enabled: true
+  existingClaim: "jellyfin-jellyfin-media"
+
+env:
+  - name: DOWNLOAD_DIR
+    value: "/metube"
+  - name: UID
+    value: "1000"
+  - name: GID
+    value: "1000"
