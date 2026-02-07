@@ -20,11 +20,9 @@ ingress:
 
 persistence:
   enabled: true
-  existingClaim: "jellyfin-jellyfin-media"
+  existingClaim: "jellyfin-media"
 
 env:
-  - name: DOWNLOAD_DIR
-    value: "/metube"
   - name: UID
     value: "1000"
   - name: GID

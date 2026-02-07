@@ -2,6 +2,10 @@
 
 Helm charts for deploying applications to a k3s homelab cluster.
 
+## TODO
+
+* kubewatch
+
 ## Charts
 
 - **gotify** - Self-hosted notification server
