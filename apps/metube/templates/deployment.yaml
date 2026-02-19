@@ -37,6 +37,9 @@ spec:
             {{- if .Values.persistence.enabled }}
             - name: media-storage
               mountPath: /downloads
+              {{- if .Values.persistence.subPath }}
+              subPath: {{ .Values.persistence.subPath }}
+              {{- end }}
             {{- end }}
             {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}

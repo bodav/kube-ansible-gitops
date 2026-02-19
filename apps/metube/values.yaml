@@ -21,6 +21,7 @@ ingress:
 persistence:
   enabled: true
   existingClaim: "jellyfin-media"
+  subPath: "metube"
 
 env:
   - name: UID
