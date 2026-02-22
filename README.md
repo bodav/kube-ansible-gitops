@@ -4,6 +4,8 @@ Helm charts for deploying applications to a k3s homelab cluster using GitOps pri
 
 ## Quick Start
 
+helm plugin install https://github.com/databus23/helm-diff --verify=false
+
 ### Using Helmfile (Recommended)
 
 Deploy all applications with proper dependencies:

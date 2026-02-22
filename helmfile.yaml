@@ -1,15 +1,11 @@
+environments:
+  default: {}
 ---
-# Helmfile for K3s Single Instance Homelab GitOps
-# Desired state for all apps on this k3s instance.
-
 helmDefaults:
   wait: true
   timeout: 300
   createNamespace: true
   atomic: true
-
-environments:
-  default: {}
 
 releases:
   # System components
