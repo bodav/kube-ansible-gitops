@@ -8,14 +8,14 @@ helmDefaults:
   atomic: true
 
 releases:
-  # System components
+  # System
   - name: traefik-dashboard
     namespace: kube-system
     chart: ./system/traefik-dashboard
     labels:
       tier: system
 
-  # Media stack
+  # Applications
   - name: jellyfin
     namespace: media
     chart: ./apps/jellyfin
@@ -47,7 +47,6 @@ releases:
     needs:
       - media/jellyfin
 
-  # Utility applications
   - name: gotify
     namespace: tools
     chart: ./apps/gotify
@@ -66,7 +65,6 @@ releases:
     values:
       - ./apps/whoami/values.yaml
 
-  # Simple job for testing (disabled by default)
   # - name: simplejob
   #   namespace: default
   #   chart: ./apps/simplejob
