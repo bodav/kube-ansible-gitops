@@ -1,5 +1,7 @@
 environments:
-  default: {}
+  default:
+    values:
+      - ./environment.yaml
 ---
 helmDefaults:
   wait: true
@@ -21,7 +23,6 @@ releases:
     chart: ./apps/jellyfin
     labels:
       tier: apps
-      category: media
     values:
       - ./apps/jellyfin/values.yaml
 
@@ -30,7 +31,6 @@ releases:
     chart: ./apps/metube
     labels:
       tier: apps
-      category: media
     values:
       - ./apps/metube/values.yaml
     needs:
@@ -41,7 +41,6 @@ releases:
     chart: ./apps/filebrowser
     labels:
       tier: apps
-      category: media
     values:
       - ./apps/filebrowser/values.yaml
     needs:
@@ -52,7 +51,6 @@ releases:
     chart: ./apps/gotify
     labels:
       tier: apps
-      category: notifications
     values:
       - ./apps/gotify/values.yaml
 
@@ -61,7 +59,6 @@ releases:
     chart: ./apps/whoami
     labels:
       tier: apps
-      category: testing
     values:
       - ./apps/whoami/values.yaml
 
